@@ -1,5 +1,4 @@
 .home {
-
   .header {
     border-bottom: 2px dashed @navigation-border;
 
@@ -14,20 +13,32 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @tablet {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
 
+      @media @tablet {
+        width: 100%;
+        text-align: center;
+      }
+
       img {
         border-radius: 10px;
       }
+    }
+
+    // This code switches the flex direction of the middle content from row to column 
+    @media @tablet {
+      flex-direction: column;
     }
   }
 
@@ -44,6 +55,13 @@
       padding-right: 1%;
       padding-left: 0;
     }
+
+
+    // This code flips the Adventure Awaits content across the horizontal 
+    @media @tablet {
+      flex-direction: column-reverse;
+    }
+
   }
 
   .content-destination {
@@ -52,6 +70,12 @@
 
     img {
       border-radius: 10px;
+    }
+
+
+    // This code stretches the Pick Your Destination section to fit 100% of parent container, which is 90% of the width of the display
+    @media @tablet {
+      width: 100%;
     }
   }
 
@@ -64,15 +88,31 @@
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @tablet {
+        width: 90%;
+      }
     }
+
+    @media @tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+
   }
 
+
+  // This code calls the custom button in variables.less
   .btn {
-    .custom-button(#077A71, 190px, 30px, 10px, white, #ABDBB3)
+    .custom-button(#077a71, 190px, 30px, 10px, white, #abdbb3);
+    display: flex;
+    justify-content: center;
+
   }
 
+
+  // This code shrinks the width of the content to 90% of the tablet/phone display so it fits inside the screen rather than across it
   @media @tablet {
-    width:90%;
+    width: 90%;
   }
-
-}// home
+} // home
