@@ -38,7 +38,23 @@ nav {
                 }
             }
         }
+
+        @media @tablet {
+            display: flex;
+            flex-direction: column;
+
+            .nav-links {
+                width: 90%;
+                display: flex;
+                justify-content: space-around;
+                padding: 10px 0;
+                font-size: 1.6rem;
+            }
+    
+        }
     }
 
-
+    @media @tablet {
+        padding: 10px 0 0 0;
     }
+}
